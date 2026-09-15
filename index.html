@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#2C3E6B" />
+  <title>Calyx Mirror Village</title>
+  <link rel="manifest" href="/calyx-village/manifest.webmanifest" />
+  <link rel="icon" href="/calyx-village/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="/calyx-village/icons/icon-192.png" />
+
+  <!-- Type system (all 2D UI drawn over the 3D scene) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --dusk: #2C3E6B;
+      --candle: #FFD580;
+      --active: #F4A261;
+      --amethyst: #7B4F9E;
+      --stone: #8B7355;
+      --thatch: #C8A96E;
+      --timber: #5C3D1E;
+      --idle: #4A4A6A;
+      --cobble: #9E8A70;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: var(--dusk); }
+    #scene { position: fixed; inset: 0; display: block; touch-action: none; }
+
+    /* Boot overlay — fades once the first frame renders */
+    #boot {
+      position: fixed; inset: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      background: radial-gradient(120% 90% at 50% 30%, #3a4d82 0%, #2C3E6B 55%, #1c274a 100%);
+      color: var(--candle); font-family: 'Cinzel', serif; letter-spacing: 0.12em;
+      transition: opacity 0.8s ease; gap: 14px;
+    }
+    #boot.gone { opacity: 0; pointer-events: none; }
+    #boot .title { font-size: clamp(20px, 4vw, 34px); font-weight: 600; text-shadow: 0 0 24px rgba(244,162,97,0.45); }
+    #boot .sub { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; opacity: 0.7; text-transform: uppercase; }
+
+    /* Corner brand + theme switch mount point (UI layer fleshes this out later) */
+    #hud { position: fixed; top: 16px; left: 18px; z-index: 20; pointer-events: none; }
+    #hud .brand { font-family: 'Cinzel', serif; color: var(--candle); font-size: 15px; letter-spacing: 0.18em; opacity: 0.9; text-shadow: 0 1px 12px rgba(0,0,0,0.5); }
+    #hud .hint { font-family: 'JetBrains Mono', monospace; color: #cdd6f4; font-size: 10px; letter-spacing: 0.15em; opacity: 0.55; margin-top: 4px; }
+  </style>
+  <script type="module" crossorigin src="/calyx-village/assets/index-CXHyK7Gl.js"></script>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div id="hud">
+    <div class="brand">CALYX MIRROR</div>
+    <div class="hint">drag to orbit · scroll to zoom · click a building</div>
+  </div>
+
+  <div id="boot">
+    <div class="title">Calyx Mirror Village</div>
+    <div class="sub">lighting the windows…</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "updated": "2026-07-06T20:00:00-05:00",
+  "agents": [
+    { "id": "gemma", "name": "Gemma", "building": "pengems", "status": "active", "currentTask": "Drafting launch copy for Opal Storm", "lastUpdate": "2026-07-06T19:58:00-05:00" },
+    { "id": "geordi", "name": "Geordi", "building": "geordi-workshop", "status": "active", "currentTask": "Building the village", "lastUpdate": "2026-07-06T19:59:00-05:00" },
+    { "id": "higgins", "name": "Higgins", "building": "higgins-manor", "status": "active", "currentTask": "Routing the morning inbox", "lastUpdate": "2026-07-06T19:40:00-05:00" },
+    { "id": "elizabeth", "name": "Elizabeth", "building": "castle", "status": "idle", "currentTask": null, "lastUpdate": "2026-07-06T18:00:00-05:00" },
+    { "id": "pepper", "name": "Pepper", "building": "ppl", "status": "complete", "currentTask": "Published a new comparison", "lastUpdate": "2026-07-06T19:30:00-05:00" },
+    { "id": "crusher", "name": "Dr. Crusher", "building": "infirmary", "status": "idle", "currentTask": null, "lastUpdate": "2026-07-06T15:00:00-05:00" },
+    { "id": "beatrice", "name": "Beatrice", "building": "ledger", "status": "error", "currentTask": "Quarterly estimate needs your input", "lastUpdate": "2026-07-06T19:20:00-05:00" }
+  ],
+  "reminders": []
+}
